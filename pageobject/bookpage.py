@@ -66,12 +66,13 @@ class Bookpage:
         self.wrepper.click_element(self.btn_bill_add_cintinue)
 
         # click on the  drop down
-        self.wrepper.select_element(self.option_second_shopp)
+        self.wrepper.select_element(self.option_second_shopp,item=dropdown)
+#
 
 
 
-res=Bookpage()
-
+# res=Bookpage()
+#
 
 
 
