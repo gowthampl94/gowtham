@@ -25,7 +25,8 @@ def attach_element(sheetname):
         return cls
     return _attach_elements
 
-path= f"/data/testdata.xls"
+path=f"C:/Users/Gowtham p/PycharmProjects/pythonProject2/shoppersstack/data/testdata_new.xls"
+# path= f"C:/Users/Gowtham p/PycharmProjects/pythonProject2/shoppersstack/data/testdata.xls"
 def read_headers(sheetname,test_case_name):
     book=open_workbook(path)
     sheet=book.sheet_by_name(sheetname)
@@ -38,9 +39,8 @@ def read_headers(sheetname,test_case_name):
             valid_header=[ item.strip() for item in headers if item.strip()]
             return ",".join(valid_header[2:])
 
-
+# path= f"C:/Users/Gowtham p/PycharmProjects/pythonProject2/shoppersstack/data/testdata.xls"
 def read_data(sheetname,test_case_name):
-
     book=open_workbook(path)
     sheet=book.sheet_by_name(sheetname)
     used_rows=sheet.nrows
@@ -48,14 +48,14 @@ def read_data(sheetname,test_case_name):
     for i in range(0,used_rows):
         row=sheet.row_values(i)
         if row[0] == test_case_name:
-            temp_record=[item.strip() for item in row if item.strip()]
+            print(row[0])
+            temp_record=[str(item).strip() for item in row if str(item).strip()]
             if temp_record[1].upper() == "YES":
                 final_data.append(tuple(temp_record[2:]))
 
     return final_data
 
-
-
+print(read_data("smoke","test_login_positive"))
 
 
 

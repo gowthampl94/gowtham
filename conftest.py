@@ -8,6 +8,7 @@ from selenium.webdriver.edge.options import Options as edgeoptions
 from pageobject.loginpage import LoginPage
 from pageobject.registerpage import Registrationpage
 from pageobject.homepage import HomePage
+from pageobject.bookpage import Bookpage
 from copy import deepcopy
 
 
@@ -75,6 +76,7 @@ def pages(driver):
         homepage = HomePage(driver)
         loginpage = LoginPage(driver)
         registationpage=Registrationpage(driver)
+        bookpage= Bookpage(driver)
 
     return pages()
 

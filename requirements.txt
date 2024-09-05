@@ -1,0 +1,4 @@
+selenium
+pytest
+xlrd
+allure-pytest
